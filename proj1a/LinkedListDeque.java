@@ -92,7 +92,7 @@ public class LinkedListDeque<T> {
     }
 
     public T getRecursive(int index){
-        return Recursive(index,sentFront);
+        return Recursive(index,sentFront.next);
     }
 
 }

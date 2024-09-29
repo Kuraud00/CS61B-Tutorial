@@ -90,7 +90,7 @@ public class ArrayDeque<T> {
         nextLast=circu(nextLast-1);
         size--;
         float R=(float)size/ items.length;
-        System.out.println(R);
+        //System.out.println(R);
         if(R<=0.25){
             resize(items.length/2);
             //System.out.println("Resized,now the length is "+items.length);
