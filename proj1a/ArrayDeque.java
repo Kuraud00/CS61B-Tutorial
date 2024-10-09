@@ -73,10 +73,8 @@ public class ArrayDeque<T> {
         nextFirst=circu(nextFirst+1);
         size--;
         float R=(float)size/ items.length;
-        System.out.println(R);
-        if(R<=0.25){
+        if(R<=0.25 && items.length>16){
             resize(items.length/2);
-            //System.out.println("Resized,now the length is "+items.length);
         }
         return temp;
     }
@@ -90,10 +88,8 @@ public class ArrayDeque<T> {
         nextLast=circu(nextLast-1);
         size--;
         float R=(float)size/ items.length;
-        //System.out.println(R);
-        if(R<=0.25){
+        if(R<=0.25 && items.length>16){
             resize(items.length/2);
-            //System.out.println("Resized,now the length is "+items.length);
         }
         return temp;
     }

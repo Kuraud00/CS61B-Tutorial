@@ -9,7 +9,7 @@ public class ArrayDeque<T> {
         nextFirst=0;
         nextLast=1;
     }
-
+    /**循环数组下标加减计算*/
     private int circu(int num){
         if(num >= items.length){
             return num-items.length;
@@ -23,7 +23,7 @@ public class ArrayDeque<T> {
     private void resize(int capacity){
         T[] temp=(T[])new Object[capacity];
         int f = circu(nextFirst+1);
-        for(int count=0;count<size;count++){
+        for(int count=0 ;count<size ;count++){
             temp[count]=items[circu(f+count)];
         }
         nextFirst=capacity-1;
@@ -73,10 +73,8 @@ public class ArrayDeque<T> {
         nextFirst=circu(nextFirst+1);
         size--;
         float R=(float)size/ items.length;
-        System.out.println(R);
-        if(R<=0.25){
+        if(R<=0.25 && items.length>16){
             resize(items.length/2);
-            //System.out.println("Resized,now the length is "+items.length);
         }
         return temp;
     }
@@ -90,10 +88,8 @@ public class ArrayDeque<T> {
         nextLast=circu(nextLast-1);
         size--;
         float R=(float)size/ items.length;
-        //System.out.println(R);
-        if(R<=0.25){
+        if(R<=0.25 && items.length>16){
             resize(items.length/2);
-            //System.out.println("Resized,now the length is "+items.length);
         }
         return temp;
     }
