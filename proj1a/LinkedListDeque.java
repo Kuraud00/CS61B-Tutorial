@@ -87,7 +87,7 @@ public class LinkedListDeque<T> {
         if(index==0){
             return current.item;
         }else{
-            return Recursive(index--,current.next);
+            return Recursive(--index,current.next);
         }
     }
 
