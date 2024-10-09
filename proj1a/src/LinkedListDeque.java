@@ -83,16 +83,16 @@ public class LinkedListDeque<T> {
         return temp.item;
     }
 
-    private T Recursive(int index,Node current){
+    private T recursive(int index,Node current){
         if(index==0){
             return current.item;
         }else{
-            return Recursive(index--,current.next);
+            return recursive(--index,current.next);
         }
     }
 
     public T getRecursive(int index){
-        return Recursive(index,sentFront.next);
+        return recursive(index,sentFront.next);
     }
 
 }
