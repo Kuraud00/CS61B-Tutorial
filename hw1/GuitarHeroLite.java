@@ -20,15 +20,16 @@ public class GuitarHeroLite {
                 }
             }
 
-        /* compute the superposition of samples */
-            double sample = stringA.sample() + stringC.sample();
+                /* compute the superposition of samples */
+                double sample = stringA.sample() + stringC.sample();
 
-        /* play the sample on standard audio */
-            StdAudio.play(sample);
+                /* play the sample on standard audio */
+                StdAudio.play(sample);
 
-        /* advance the simulation of each guitar string by one step */
-            stringA.tic();
-            stringC.tic();
+                /* advance the simulation of each guitar string by one step */
+                stringA.tic();
+                stringC.tic();
+
         }
     }
 }
